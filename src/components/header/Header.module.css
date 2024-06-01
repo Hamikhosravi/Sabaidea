@@ -1,0 +1,30 @@
+.header {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    background-color: blue;
+}
+
+.header nav {
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.header nav a {
+    color: white;
+    transition: 0.2s;
+}
+
+.header nav a:hover {
+    text-decoration: underline;
+}
+
+.filtersSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}

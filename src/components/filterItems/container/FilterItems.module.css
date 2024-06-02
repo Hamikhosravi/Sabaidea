@@ -5,3 +5,7 @@
     font-weight: bold;
     margin: 20px;
 }
+
+.error {
+    color: white;
+}

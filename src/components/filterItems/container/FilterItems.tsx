@@ -12,10 +12,10 @@ const FilterItems = () => {
     const {data, isLoading, error} = useFilteredItems(category, sort);
 
     if (error) {
-        return (<div>Error on fetching data</div>);
+        return (<div className={classes.error}>Error on fetching data</div>);
     }
 
-    if (isLoading) {
+    if (data) {
         return (<LoadingSpin/>);
     }
 

@@ -1,5 +1,6 @@
-import { createContext, ReactNode, useState } from 'react';
+import { createContext, ReactNode, useState, useEffect } from 'react';
 import classes from "./FilterContext.module.css";
+import { useLocation } from "react-router-dom";
 
 type Props = {
     children: ReactNode;
@@ -9,7 +10,7 @@ type FilteredContextType = {
     categorySelectedOptions: string[];
     sortSelectedOptions: string[];
     handleCategoryCheckboxChange: (option: string) => void;
-    handleSortCheckboxChange : (option:string) => void;
+    handleSortCheckboxChange: (option: string) => void;
 };
 
 export const FilteredContext = createContext<FilteredContextType>({
@@ -19,10 +20,22 @@ export const FilteredContext = createContext<FilteredContextType>({
     handleSortCheckboxChange: () => {},
 });
 
-
 const FilteredContextComponent = ({ children }: Props) => {
-    const [categorySelectedOptions, setCategorySelectedOptions] = useState<string[]>(['درام', 'کمدی', 'علمی تخیلی', 'اکشن']);
-    const [sortSelectedOptions, setSortSelectedOptions] = useState<string[]>(['بالاترین امتیاز']);
+    const [categorySelectedOptions, setCategorySelectedOptions] = useState<string[]>([]);
+    const [sortSelectedOptions, setSortSelectedOptions] = useState<string[]>([]);
+
+    const query = new URLSearchParams(useLocation().search);
+    const category = query.get('category');
+    const sort = query.get('sort');
+
+    useEffect(() => {
+        if (category) {
+            setCategorySelectedOptions(category.split(','));
+        }
+        if (sort) {
+            setSortSelectedOptions(sort.split(','));
+        }
+    }, [category, sort]);
 
     const handleCategoryCheckboxChange = (option: string) => {
         setCategorySelectedOptions((prevSelected) => {
@@ -45,7 +58,14 @@ const FilteredContextComponent = ({ children }: Props) => {
     };
 
     return (
-        <FilteredContext.Provider value={{ categorySelectedOptions, handleCategoryCheckboxChange, sortSelectedOptions, handleSortCheckboxChange}}>
+        <FilteredContext.Provider
+            value={{
+                categorySelectedOptions,
+                handleCategoryCheckboxChange,
+                sortSelectedOptions,
+                handleSortCheckboxChange
+            }}
+        >
             <section className={classes.wholePage}>
                 {children}
             </section>

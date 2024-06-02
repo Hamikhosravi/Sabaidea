@@ -15,7 +15,7 @@ const FilterItems = () => {
         return (<div className={classes.error}>Error on fetching data</div>);
     }
 
-    if (data) {
+    if (isLoading) {
         return (<LoadingSpin/>);
     }
 

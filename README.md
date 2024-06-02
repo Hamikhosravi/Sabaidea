@@ -1,3 +1,11 @@
+# Summary
+
+Check the result of this project by clicking [Here](https://sabeidea.vercel.app/)
+
+The project is Dockerized.
+
+it's written by React and typeScript
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

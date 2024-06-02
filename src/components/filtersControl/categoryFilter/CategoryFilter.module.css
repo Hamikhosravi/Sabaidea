@@ -1,0 +1,15 @@
+.container {
+    width: 30%;
+    max-width: 600px;
+    border: 0.5px solid #ccc;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    margin: 10px;
+    position: relative;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 110px;
+    }
+}

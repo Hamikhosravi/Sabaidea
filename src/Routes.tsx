@@ -8,7 +8,7 @@ export default function RoutesPath() {
     return (
         <Routes>
             <Route path="/" element={<Suspense fallback={<LoadingSpin />}><div /></Suspense>}  exact />
-            <Route path="/filtered-items" element={<Suspense fallback={<LoadingSpin />}><FilteredItems /></Suspense>}  />
+            <Route path={`/filtered-items`} element={<Suspense fallback={<LoadingSpin />}><FilteredItems /></Suspense>}  />
         </Routes>
     );
 }

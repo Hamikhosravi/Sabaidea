@@ -3,7 +3,7 @@ import Header from './components/header/Header';
 import RoutesPath from './Routes';
 import './App.css';
 import React from 'react';
-import FilteredContext from './store/FilterContext';
+import FilteredContextComponent from './store/FilterContext';
 
 const queryClient = new QueryClient();
 
@@ -11,10 +11,10 @@ function App() {
     return (
         <main>
             <QueryClientProvider client={queryClient}>
-                <FilteredContext>
+                <FilteredContextComponent>
                     <Header />
                     <RoutesPath />
-                </FilteredContext>
+                </FilteredContextComponent>
             </QueryClientProvider>
         </main>
     );

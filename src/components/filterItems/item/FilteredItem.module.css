@@ -3,32 +3,95 @@
     width: 190px;
     height: 250px;
     margin: 14px 6px;
+    position: relative;
 }
- .image {
-     display: block;
-     width: 100%;
-     height: 230px;
-     object-fit: cover;
-     object-position: center;
-     border-radius: 8px;
- }
- .description {
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-     white-space: nowrap;
-     color: white;
-     padding: 6px 2px;
- }
- .title {
-     white-space: nowrap;
-     overflow: hidden;
-     text-overflow: ellipsis;
-     font-size: 14px;
- }
+
+.imageContainer {
+    position: relative;
+    width: 100%;
+    height: 230px; /* Adjusted height to include only the image */
+}
+
+.image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* 50% transparent gray */
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.imageContainer:hover .overlay {
+    opacity: 1;
+}
+
+.overlayText {
+    color: white;
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.overlayTitle {
+    display: block;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 10px
+}
+
+.overlayRate {
+    display: block;
+    font-size: 10px;
+    padding: 2px 6px;
+    background-color: #4b4b4b;
+    border-radius: 20px;
+    margin-top: 8px;
+    width: 50px;
+}
+
+.description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    white-space: nowrap;
+    color: black; /* Adjusted to black for visibility */
+    padding: 6px 2px;
+    margin-top: 8px; /* Add margin for spacing */
+}
+
+.title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    color: white;
+}
+
 .rate {
     padding: 2px 6px;
     background-color: #4b4b4b;
     border-radius: 20px;
     font-size: 10px;
+    color: white; /* Adjusted to white for visibility */
 }

@@ -1,0 +1,49 @@
+
+
+.listBox {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    top: 120%;
+    left: 0;
+    width: 100%;
+    border: 1px solid #3a3a3b;
+    border-radius: 4px;
+    background-color: #2d2d2d;
+    max-height: 70px;
+    overflow-y: auto;
+    z-index: 1000;
+    padding: 10px 5px;
+}
+
+@media (max-width: 600px) {
+    .listBox {
+        max-height: unset;
+        padding: 10px 0;
+    }
+}
+
+.list-item {
+    padding: 10px;
+}
+
+.label {
+    cursor: pointer;
+    color: white;
+    font-size: 13px;
+}
+
+.listItem input {
+    margin-right: 10px;
+    margin-left:6px;
+    height: 10px;
+}
+
+input[type=checkbox] {
+    accent-color: orange;
+}
+
+
+

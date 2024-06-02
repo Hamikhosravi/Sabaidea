@@ -1,4 +1,13 @@
 .itemsFrame {
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+@media (max-width: 600px) {
+    .itemsFrame {
+        justify-content: center;
+        align-items: center;
+    }
 }

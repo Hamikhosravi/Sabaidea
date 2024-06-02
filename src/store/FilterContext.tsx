@@ -30,7 +30,6 @@ const FilteredContextComponent = ({ children }: Props) => {
 
     useEffect(() => {
         if (category) {
-            console.log("cat",category)
             setCategorySelectedOptions(category.split(','));
         }
         if (sort) {

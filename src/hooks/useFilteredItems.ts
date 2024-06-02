@@ -30,9 +30,9 @@ export const useFilteredItems = (category: string, sort: string): UseQueryResult
 
             // Sort items based on rate_average
             if (sort === 'پایین ترین امتیاز') {
-                filteredItems.sort((a, b) => a.rate_avrage - b.rate_avrage);
+                filteredItems.sort((a, b) => +a.rate_avrage - +b.rate_avrage);
             } else if (sort === 'بالاترین امتیاز') {
-                filteredItems.sort((a, b) => b.rate_avrage - a.rate_avrage);
+                filteredItems.sort((a, b) => +b.rate_avrage - +a.rate_avrage);
             }
 
             return filteredItems;

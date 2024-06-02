@@ -1,4 +1,3 @@
-import React from "react";
 import {useFilteredItems} from "../../../hooks/useFilteredItems";
 import LoadingSpin from "../../loading/LoadingSpin";
 import FilteredList from "../list/FilteredList";

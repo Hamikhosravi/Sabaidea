@@ -1,7 +1,12 @@
-import React from 'react';
 import classes from "./ListBoxModal.module.css";
 
-const ListBoxModal = ({ options, selectedOptions, handleCheckboxChange }) => {
+type ListBoxModalProps = {
+    options: string[];
+    selectedOptions: string[];
+    handleCheckboxChange: (option:string) => void;
+}
+
+const ListBoxModal = ({ options, selectedOptions, handleCheckboxChange }: ListBoxModalProps) => {
     return (
         <div className={classes.listBox}>
             {options.map((option) => (

@@ -1,10 +1,9 @@
-import React from "react";
 import classes from "./ListBoxInput.module.css"
 
 type ListBoxInputProps = {
     label: string;
     isOpen: boolean;
-    setModal: () =>{}
+    setModal: () => void
 }
 
 

@@ -1,4 +1,4 @@
-import React, { SyntheticEvent } from "react";
+import { SyntheticEvent } from "react";
 import classes from "./FilteredItem.module.css";
 
 type Category = {

@@ -1,4 +1,4 @@
-import React, { lazy, Suspense} from 'react';
+import { lazy, Suspense} from 'react';
 import { Route, Routes } from 'react-router-dom';
 import LoadingSpin from "./components/loading/LoadingSpin";
 
@@ -7,7 +7,7 @@ const FilteredItems = lazy(() => import('./components/filterItems/container/Filt
 export default function RoutesPath() {
     return (
         <Routes>
-            <Route path="/" element={<Suspense fallback={<LoadingSpin />}><div /></Suspense>}  exact />
+            <Route path="/" element={<Suspense fallback={<LoadingSpin />}><div /></Suspense>}  />
             <Route path={`/filtered-items`} element={<Suspense fallback={<LoadingSpin />}><FilteredItems /></Suspense>}  />
         </Routes>
     );

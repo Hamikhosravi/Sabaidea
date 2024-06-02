@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import ListBoxModal from '../listBox/ListBoxModal';
 import { FilteredContext } from '../../../store/FilterContext';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -16,7 +16,7 @@ const CategoryFilter = () => {
     useEffect(() => {
         const queryParams = new URLSearchParams(location.search);
         if (categorySelectedOptions.length > 0) {
-            queryParams.set('category', categorySelectedOptions);
+            queryParams.set('category', categorySelectedOptions.join(','));
         } else {
             queryParams.delete('category');
         }

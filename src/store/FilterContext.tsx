@@ -21,8 +21,8 @@ export const FilteredContext = createContext<FilteredContextType>({
 });
 
 const FilteredContextComponent = ({ children }: Props) => {
-    const [categorySelectedOptions, setCategorySelectedOptions] = useState<string[]>([]);
-    const [sortSelectedOptions, setSortSelectedOptions] = useState<string[]>([]);
+    const [categorySelectedOptions, setCategorySelectedOptions] = useState<string[]>(['درام', 'کمدی', 'علمی تخیلی', 'اکشن']);
+    const [sortSelectedOptions, setSortSelectedOptions] = useState<string[]>(['بالاترین امتیاز']);
 
     const query = new URLSearchParams(useLocation().search);
     const category = query.get('category');
@@ -30,12 +30,13 @@ const FilteredContextComponent = ({ children }: Props) => {
 
     useEffect(() => {
         if (category) {
+            console.log("cat",category)
             setCategorySelectedOptions(category.split(','));
         }
         if (sort) {
             setSortSelectedOptions(sort.split(','));
         }
-    }, [category, sort]);
+    }, []);
 
     const handleCategoryCheckboxChange = (option: string) => {
         setCategorySelectedOptions((prevSelected) => {
